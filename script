@@ -1,0 +1,1032 @@
+# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define Phoenix = Character("Phoenix")
+define Mia = Character("Mia")
+define Butz = Character("Butz")
+define Judge = Character("Judge")
+define Payne = Character("Payne")
+define Sahwit = Character("Sahwit")
+
+
+# The game starts here.
+
+label start:
+
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
+
+    scene waiting room
+
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
+
+    show eileen happy
+
+    # These display lines of dialogue.
+
+    Phoenix "(Boy am I nervous!)"
+
+    Mia "Wright!"
+
+    Phoenix "Oh, h-hiya, Chief."
+
+    Mia "Whew, I'm glad I made it on time. Well, I have to say Phoenix, I'm impressed! Not everyone takes on a murder trial right off the bat like this. It says a lot about you... and your client as well."
+
+    Phoenix "Um... thanks. Actually, it's because I owe him a favor."
+
+    Mia "A favor? You mean, you knew the defendant before this case?"
+
+    Phoenix "Yes. Actually, I kind of owe my current job to him. He's one of the reasons I became an attorney."
+
+    Mia "Well, that's news to me!"
+
+    Phoenix "I want to help him out any way I can! I just... really want to help him, I owe him that much."
+
+    "???" "It's over! My life, everything, it's all over!"
+
+    Mia "... Isn't that your client screaming over there?"
+
+    Phoenix "Yeah... that's him."
+
+    "???" "(Death! Despair! Ohhhh! I'm gonna do it, I'm gonna die!!!)"
+
+    Mia "It sounds like he wants to die..."
+
+    Phoenix "Um, yeah. *sigh*"
+
+    Butz "Nick!!!"
+
+    Phoenix "Hey. Hey there, Larry."
+
+    Butz "Dude, I'm so guilty!! Tell them I'm guilty!!! Gimme the death sentence! I ain't afraid to die!"
+
+    Phoenix "What!? What's wrong, Larry?"
+
+    Butz "Oh, it's all over... I... I'm finished. Finished! I can't live in a world without her! I can't! Who... who took her away from me, Nick? Who did this!? Aww, Nick, ya gotta tell me! Who took my baby away!?"
+
+    Phoenix "(Hmm... The person responsible for your girlfriend's death? The newspapers say it was you...)"
+
+    Phoenix "(My name is Phoenix Wright. Here's the story: My first case is a fairly simple one. A young woman was killed in her apartment. The guy they arrested was the unlucky sap dating her: Larry Butz... my best friend since grade school.)"
+
+    Phoenix "(Our school had a saying: 'When something smells, it's usually the Butz.' In the 23 years I've known him, it's usually been true. He has a knack for getting himself in trouble. One thing I can say though: it's usually not his fault. He just has terrible luck.)"
+
+    Phoenix "(But I know better than anyone, that he's a good guy at heart. That and I owe him one. Which is why I took the case... to clear his name. And that's just what I'm going to do!)"
+
+    scene courtroom
+
+    "August 3, 10:00 AM - District Court - Courtroom No. 2"
+
+    Judge "The court is now in session for the trial of Mr. Larry Butz."
+
+    Payne "The prosecution is ready, Your Honor."
+
+    Phoenix "The, um, defense is ready, Your Honor."
+
+    Judge "Ahem. Mr. Wright? This is your first trial, is it not?"
+
+    Phoenix "Y-Yes, Your Honor. I'm, um, a little nervous."
+
+    Judge "Your conduct during this trial will decide the fate of your client. Murder is a serious charge. For your client's sake, I hope you can control your nerves."
+
+    Phoenix "Thank... thank you, Your Honor."
+
+    Judge "... Mr. Wright, given the circumstances... I think we should have a test to ascertain your readiness."
+
+    Phoenix "Y-Your Honor. (Gulp... Hands shaking... Eyesight... fading...)"
+
+    Judge "This test will consist of a few simple questions. Answer them clearly and concisely. Please state the name of the defendant in this case."
+
+    label choice1:
+        menu:
+            "Phoenix Wright":
+                jump wright
+            "Larry Butz":
+                jump larry
+            "Mia Fey":
+                jump fey
+
+        label wright:
+            Phoenix "Um... the defendant... is me, right?"
+
+            Mia "Wright! Have you completely lost your mind? Focus! The defendant is the person on trial! You're his lawyer!"
+
+            Phoenix "Um, er, eh? Oh yeah, right! Eh heh heh."
+
+            Mia "This is no laughing matter! You did pass the bar, didn't you?"
+
+            Judge "Sorry, I couldn't hear your answer. I'll ask once more: Please state the name of the defendant in this case."
+            jump choice1
+
+        label fey:
+            Phoenix "The, um, defendant? That's... er... Mia Fey?"
+
+            Mia "Wrong, Wright. Look, I have to leave. I have to go home. I'm... I'm expecting a delivery."
+
+            Phoenix "Aw, c'mon Chief. There's no need to be going so soon, is there?"
+
+            Mia "Wright! Listen: the defendant is the one on trial--your client! I mean, that's about as basic as you can get!"
+
+            Phoenix "(I've put my foot in it this time! I've got to relax!)"
+
+            Judge "Sorry, I couldn't hear your answer. I'll ask once more: Please state the name of the defendant in this case."
+
+            jump choice1
+
+        label larry:
+            Phoenix "The defendant? Well, that's Larry Butz, Your Honor."
+
+    Judge "Correct. Just keep your wits about you and you'll do fine. Next question: This is a murder trial. Tell me, what's the victim's name?"
+
+    Phoenix "(Whew, I know this one! Glad I read the case report cover to cover so many times. It's... wait... Uh-oh! No... no way! I forgot! I'm drawing a total blank here!)"
+
+    Mia "Phoenix! Are you absolutely SURE you're up to this? You don't even know the victim's name!?"
+
+    Phoenix "Oh, the victim! O-Of course I know the victim's name! I, um, just forgot. ... Temporarily."
+
+    Mia "I think I feel a migrane coming on."
+
+    Judge "Mr. Wright. Who is the victim in this case?"
+
+    label choice2:
+        menu:
+            "Mia Fey":
+                jump fey2
+            "Cinder Block":
+                jump cinder
+            "Cindy Stone":
+                jump cindy
+
+        label fey2:
+            Phoenix "Um... Mia Fey?"
+
+            Mia "W-W-What!? How can I be the victim!?"
+
+            Phoenix "Oh! Right! Sorry! I, er, it was the first name that popped into my head, and--"
+
+            Judge "Let me ask that one again: Who is the victim in this case?"
+
+            jump choice2
+
+        label cinder:
+            Phoenix "Oh, um, wasn't it Ms. Block? Ms. Cinder Block?"
+
+            Judge "The person in question was a victim of murder, not ill-conceived naming, Mr. Wright. I ask you again: Who is the victim in this case?"
+
+            jump choice2
+
+        label cindy:
+            Phoenix "Um...the victim's name is Cindy Stone."
+
+    Judge "Correct. Now, tell me, what was the cause of death? She died because she was...?"
+
+    Mia "If you don't know the answer, make sure to check the Court Record for info."
+
+    label choice3:
+        menu:
+            "Poisoned":
+                jump poison
+            "Hit with a blunt object":
+                jump blunt
+            "Strangled":
+                jump strangle
+            "Check Court Record":
+                jump record1
+
+        label poison:
+            Phoenix "Oh, right! Wasn't she, um, poisoned by er... poison?"
+
+            Judge "You're asking me!?"
+
+            Phoenix "Um... Chief! Help me out!"
+
+            Mia "Check the court record...remember?"
+
+            Phoenix "(Geez. Give a guy a break!)"
+
+            Judge "Let me ask again. She died because she was...?"
+
+            jump choice3
+
+        label strangle:
+            Phoenix "Right... she was strangled, wasn't she?"
+
+            Mia "Please tell me that was you talking to yourself."
+
+            Judge "If you wish to hang yourself, Mr. Wright, you're welcome to, but not inside my courtroom. I suppose there's nothing to do but give you another try: She died because...?"
+
+            jump choice3
+
+        label record1:
+            menu:
+                "What evidence do you want to check?"
+                "Attorney's Badge":
+                    jump badge
+                "Cindy's Autopsy Report":
+                    jump autopsy
+            label badge:
+                Phoenix "One of my possessions. No one would believe I was a defense attorney if I didn't carry this."
+                jump choice3
+            label autopsy:
+                Phoenix "Received from Mia Fey. Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma."
+                jump choice3
+
+        label blunt:
+            Phoenix "She was struck once, by a blunt object."
+
+    Judge "Correct. You've answered all my questions. I see no reason why we shouldn't proceed. You seem much more relaxed, Mr. Wright. Good for you."
+
+    Phoenix "Thank you, Your Honor. (Because I don't FEEL relaxed, that's for sure.)"
+
+    Judge "Well, then... First, a question for the prosecution. Mr. Payne?"
+
+    Payne "Yes, Your Honor?"
+
+    Judge "As Mr. Wright just told us, the victim was struck with a blunt object. Would you explain to the court just what that 'object' was?"
+
+    Payne "The murder weapon was this statue of 'The Thinker.' It was found lying on the floor, next to the victim."
+
+    Judge "I see... the court accepts it into evidence."
+
+    "Statue added to the Court Record."
+
+    Mia "Wright... Be sure to pay attention to any evidence added during the trial. That evidence is the only ammunition you have in court."
+
+    Judge "Mr. Payne, the prosecution may call its first witness."
+
+    Payne "The prosecution calls the defendant, Mr. Butz, to the stand."
+
+    Phoenix "Um, Chief, what do I do now?"
+
+    Mia "Pay attention. You don't want to miss any information that might help your client's case. You'll get your chance to respond to the prosecution later, so be ready! Let's just hope he doesn't say anything... unfortunate."
+
+    Phoenix "(Uh oh, Larry gets excited easily... this could be bad.)"
+
+    Payne "Ahem. Mr. Butz. Is it not true that the victim had recently dumped you?"
+
+    Butz "Hey, watch it buddy! We were great together! We were Romeo and Juliet, Cleopatra and Mark Anthony!"
+
+    Phoenix "(Um... didn't they all die?)"
+
+    Butz "I wasn't dumped! She just wasn't taking my phone calls. Or seeing me... Ever. WHAT'S IT TO YOU, ANYWAY!?"
+
+    Payne "Mr. Butz, what you describe is generally what we mean by 'dumped.' In fact, she had completely abandoned you... and was seeing other men! She had just returned from overseas with one of them the day before the murder!"
+
+    Butz "Whaddya mean, 'one of them'!? Lies! All of it, lies! I don't believe a word of it!"
+
+    Payne "Your Honor, the victim's passport. According to this, she was in Paris until the day before she died."
+
+    "Passport added to the Court Record."
+
+    Judge "Hmm... Indeed, she appears to have returned the day before the murder."
+
+    Butz "Dude... no way..."
+
+    Payne "The victim was a model, but did not have a large income. It appears that she had several 'Sugar Daddies.'"
+
+    Butz "Daddies? Sugar?"
+
+    Payne "Yes. Older men, who gave her money and gifts. She took their money and used it to support her lifestyle."
+
+    Butz "Duuude!"
+
+    Payne "We can clearly see what kind of woman this Ms. Stone was. Tell me, Mr. Butz, what do you think of her now?"
+
+    Mia "Wright... I don't think you want him to answer that question."
+
+    Phoenix "(Yeah... Larry has a way of running his mouth in all the wrong directions. Should I...?)"
+
+    menu:
+        "Wait and see what happens":
+            jump wait
+        "Stop him from answering":
+            jump stopp
+    label wait:
+        Phoenix "(Might be better not to get involved in this one...)"
+
+        Payne "Well, Mr. Butz?"
+
+        Butz "Dude, no way! That cheatin' she-dog!"
+
+        jump continue1
+    label stopp:
+        Phoenix "My client had no idea the victim was seeing other men! That question is irrelevant to this case!"
+
+        Payne "Oof! *wince*"
+
+        Butz "Dude! Nick! Whaddya mean, 'irrelevant'!? That cheatin' she-dog!"
+
+        jump continue1
+    label continue1:
+        Butz "I'm gonna die. I'm just gonna drop dead! Yeah, and when I meet her in the afterlife... I'm going to get to the bottom of this!"
+
+    Judge "Let's continue with the trial, shall we?"
+
+    Payne "I believe the accused's motive is clear to everyone."
+
+    Judge "Yes, quite."
+
+    Phoenix "(Oh boy. This is so not looking good.)"
+
+    Payne "Next question! You went to the victim's apartment on the day of the murder, did you not?"
+
+    Butz "Gulp!"
+
+    Payne "Well, did you, or did you not?"
+
+    Butz "Heh? Heh heh. Well, maybe I did, and maybe I didn't!"
+
+    Phoenix "(Uh oh. He went. What do I do?)"
+
+    menu:
+        "Have him answer honestly":
+            jump honest
+        "Stop him from answering":
+            jump stoppp
+    label honest:
+        Phoenix "(I know! I'll send him a signal...)"
+
+        Phoenix "(TELL THE TRUTH)"
+
+        Butz "Er... Yeah! Yeah! I was there! I went!"
+
+        Judge "Order! Well, Mr. Butz?"
+
+        Butz "Dude, chill! She wasn't home, man... So, like, I didn't see her."
+
+        Payne "Objection!"
+
+        Payne "Your Honor, the defendant is lying."
+
+        Judge "Lying?"
+
+        Payne "The prosecution would like to call a witness who can prove Mr. Butz is lying."
+
+        jump continue2
+    label stoppp:
+        Phoenix "(I'll send him a signal...)"
+
+        Phoenix "(LIE LIKE A DOG)"
+
+        Butz "Um, well, see, it's like this: I don't remember."
+
+        Payne "You 'don't remember'? Well then, we'll just have to remind you!"
+
+        Phoenix "(I got a bad feeling about this...)"
+
+        Payne "We have a witness that can prove he DID go to the victim's apartment that day!"
+
+        jump continue2
+    label continue2:
+        Judge "Well, that simplifies matters. Who is your witness?"
+
+    Payne "The man who found the victim's body. Just before making the gruesome discovery... He saw the defendant fleeing the scene of the crime!"
+
+    Judge "Order! Order in the court! Mr. Payne, the prosecution may call its witness."
+
+    Payne "Yes, Your Honor."
+
+    Phoenix "(This is bad...)"
+
+    Payne "On the day of the murder, my witness was selling newspapers at the victim's building. Please bring Mr. Frank Sahwit to the stand!"
+
+    Payne "Mr. Sahwit, you sell newspaper subscriptions, is this correct?"
+
+    Sahwit "Oh, oh yes! Newspapers, yes!"
+
+    Judge "Mr. Sahwit, you may proceed with your testimony. Please tell the court what you saw on the day of the murder."
+
+    "Witness Testimony
+    -- Witness's Account --"
+
+    Sahwit "I was going door-to-door, selling subscriptions when I saw a man fleeing an apartment."
+
+    Sahwit "I thought he must be in a hurry because he left the door half-open behind him."
+
+    Sahwit "Thinking it strange, I looked inside the apartment."
+
+    Sahwit "Then I saw her lying there... A woman... not moving... dead!"
+
+    Sahwit "I quailed in fright and found myself unable to go inside."
+
+    Sahwit "I thought to call the police immediately!"
+
+    Sahwit "However, the phone in her apartment wasn't working."
+
+    Sahwit "I went to a nearby park and found a public phone."
+
+    Sahwit "I remember the time exactly: It was 1:00 PM."
+
+    Sahwit "The man who ran was, without a doubt, the defendant sitting right over there."
+
+    Judge "Hmm..."
+
+    Phoenix "(Larry! Why didn't you tell the truth? I can't defend you against a testimony like that!)"
+
+    Judge "Incidentally, why wasn't the phone in the victim's apartment working?"
+
+    Payne "Your Honor, at the time of the murder, there was a blackout in the building."
+
+    Judge "Aren't phones supposed to work during a blackout?"
+
+    Payne "Yes, Your Honor... However, some cordless phones do not function normally. The phone that Mr. Sahwit used was one of those. Your Honor... I have a record of the blackout, for your perusal."
+
+    "Blackout Record added to the Court Record."
+
+    Judge "Now, Mr. Wright..."
+
+    Phoenix "Yes! Er... yes, Your Honor?"
+
+    Judge "You may begin your cross-examination."
+
+    Phoenix "C-Cross-examination, Your Honor?"
+
+    Mia "Alright, Wright, this is it. The real deal!"
+
+    Phoenix "Uh... what exactly am I supposed to do?"
+
+    Mia "Why, you expose the lies in the testimony the witness just gave!"
+
+    Phoenix "Lies! What?! He was lying!?"
+
+    Mia "Your client is innocent, right? Then that witness must have lied in his testimony! Or is your client really... guilty?"
+
+    Phoenix "!!! How do I prove he's not?"
+
+    Mia "You hold the key! It's in the evidence! Compare the witness's testimony to the evidence at hand. There's bound to be a contradiction in there! First, find contradictions between the Court Record and the witness's testimony. Then, once you've found the contradicting evidence... present it and rub it in the witness's face!"
+
+    Phoenix "Um... okay."
+
+    Mia "You can also Press each statement to get more info out of the witness!"
+
+    "From here on, wrong choices such as presenting the incorrect/unrelated evidence will result in a penalty. If you receive 5 penalties, it's game over. You can Press as much as you'd like, however."
+
+    "Cross Examination
+    -- Witness's Account --"
+
+    menu one1:
+        Sahwit "I was going door-to-door, selling subscriptions when I saw a man fleeing an apartment."
+        "Press":
+            Phoenix "Hold it!"
+
+            Phoenix "Isn't a man leaving an apartment a common sight? I find it odd you would take notice of him..."
+
+            Sahwit "Er... heh. I don't know. He just seemed strange to me, that's all. Like he was mad, and yet frightened at the same time. Just like... a criminal fleeing the scene of a crime!"
+
+            Phoenix "The defense requests that the witness refrain from conjecture!"
+
+            Payne "Of course. What the witness means is that the man he saw looked suspicious. So, what happened next?"
+
+            jump one2
+        "Present":
+            menu:
+                "What evidence are you presenting?"
+                "Attorney's Badge":
+                    jump wrongEvidence1
+                "Cindy's Autopsy Report":
+                    jump wrongEvidence1
+                "Statue":
+                    jump wrongEvidence1
+                "Passport":
+                    jump wrongEvidence1
+                "Blackout Record":
+                    jump wrongEvidence1
+                "Go back":
+                    jump one1
+        "Check Court Record":
+            menu:
+                "What evidence do you want to check?"
+                "Attorney's Badge":
+                    Phoenix "One of my possessions. No one would believe I was a defense attorney if I didn't carry this."
+                    jump one1
+                "Cindy's Autopsy Report":
+                    Phoenix "Received from Mia Fey. Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma."
+                    jump one1
+                "Statue":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. A statue in the shape of 'The Thinker'. It's rather heavy."
+                    jump one1
+                "Passport":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. The victim apparently arrived home from Paris on 7/30, the day before the murder."
+                    jump one1
+                "Blackout Record":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. Electricity to Ms. Stone's building was out from noon to 6 PM on the day of the crime."
+                    jump one1
+                "Go back":
+                    jump one1
+        "Next statement":
+            jump one2
+    menu one2:
+        Sahwit "I thought he must be in a hurry because he left the door half-open behind him."
+        "Press":
+            Phoenix "Hold it!"
+
+            Phoenix "Half-open... you say?"
+
+            Sahwit "Yes, yes, the door was open halfway. Yes. I watched for a moment, but no one came to close the door. 'That's odd, in a big city like this,' I thought..."
+
+            Payne "I see. And what happened next?"
+
+            jump one3
+        "Present":
+            menu:
+                "What evidence are you presenting?"
+                "Attorney's Badge":
+                    jump wrongEvidence1
+                "Cindy's Autopsy Report":
+                    jump wrongEvidence1
+                "Statue":
+                    jump wrongEvidence1
+                "Passport":
+                    jump wrongEvidence1
+                "Blackout Record":
+                    jump wrongEvidence1
+                "Go back":
+                    jump one2
+        "Check Court Record":
+            menu:
+                "What evidence do you want to check?"
+                "Attorney's Badge":
+                    Phoenix "One of my possessions. No one would believe I was a defense attorney if I didn't carry this."
+                    jump one2
+                "Cindy's Autopsy Report":
+                    Phoenix "Received from Mia Fey. Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma."
+                    jump one2
+                "Statue":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. A statue in the shape of 'The Thinker'. It's rather heavy."
+                    jump one2
+                "Passport":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. The victim apparently arrived home from Paris on 7/30, the day before the murder."
+                    jump one2
+                "Blackout Record":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. Electricity to Ms. Stone's building was out from noon to 6 PM on the day of the crime."
+                    jump one2
+                "Go back":
+                    jump one2
+        "Next statement":
+            jump one3
+        "Previous statement":
+            jump one1
+    menu one3:
+        Sahwit "Thinking it strange, I looked inside the apartment."
+        "Press":
+            Phoenix "Hold it!"
+
+            Phoenix "What gave you the idea to do that?"
+
+            Sahwit "Well, the door was half-open, you see. Isn't it only human to want to... peek? We climb mountains because they are there! It's the same thing."
+
+            Payne "Truer words have never been spoken! Anyone would look inside!"
+
+            Phoenix "(Hmm... why did Payne cut him off so quickly?)"
+
+            Payne "So you looked into the apartment. What happened then?"
+
+            jump one4
+        "Present":
+            menu:
+                "What evidence are you presenting?"
+                "Attorney's Badge":
+                    jump wrongEvidence1
+                "Cindy's Autopsy Report":
+                    jump wrongEvidence1
+                "Statue":
+                    jump wrongEvidence1
+                "Passport":
+                    jump wrongEvidence1
+                "Blackout Record":
+                    jump wrongEvidence1
+                "Go back":
+                    jump one3
+        "Check Court Record":
+            menu:
+                "What evidence do you want to check?"
+                "Attorney's Badge":
+                    Phoenix "One of my possessions. No one would believe I was a defense attorney if I didn't carry this."
+                    jump one3
+                "Cindy's Autopsy Report":
+                    Phoenix "Received from Mia Fey. Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma."
+                    jump one3
+                "Statue":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. A statue in the shape of 'The Thinker'. It's rather heavy."
+                    jump one3
+                "Passport":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. The victim apparently arrived home from Paris on 7/30, the day before the murder."
+                    jump one3
+                "Blackout Record":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. Electricity to Ms. Stone's building was out from noon to 6 PM on the day of the crime."
+                    jump one3
+                "Go back":
+                    jump one3
+        "Next statement":
+            jump one4
+        "Previous statement":
+            jump one2
+    menu one4:
+        Sahwit "Then I saw her lying there... A woman... not moving... dead!"
+        "Press":
+            Phoenix "Hold it!"
+
+            Phoenix "Are you sure she was dead?"
+
+            Sahwit "W-Well, no, I guess I wasn't. But, she wasn't moving at all, and there was blood everywhere."
+
+            Phoenix "(I guess that would look fatal to anyone...) Very well, what happened next?"
+
+            jump one5
+        "Present":
+            menu:
+                "What evidence are you presenting?"
+                "Attorney's Badge":
+                    jump wrongEvidence1
+                "Cindy's Autopsy Report":
+                    jump wrongEvidence1
+                "Statue":
+                    jump wrongEvidence1
+                "Passport":
+                    jump wrongEvidence1
+                "Blackout Record":
+                    jump wrongEvidence1
+                "Go back":
+                    jump one4
+        "Check Court Record":
+            menu:
+                "What evidence do you want to check?"
+                "Attorney's Badge":
+                    Phoenix "One of my possessions. No one would believe I was a defense attorney if I didn't carry this."
+                    jump one4
+                "Cindy's Autopsy Report":
+                    Phoenix "Received from Mia Fey. Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma."
+                    jump one4
+                "Statue":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. A statue in the shape of 'The Thinker'. It's rather heavy."
+                    jump one4
+                "Passport":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. The victim apparently arrived home from Paris on 7/30, the day before the murder."
+                    jump one4
+                "Blackout Record":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. Electricity to Ms. Stone's building was out from noon to 6 PM on the day of the crime."
+                    jump one4
+                "Go back":
+                    jump one4
+        "Next statement":
+            jump one5
+        "Previous statement":
+            jump one3
+    menu one5:
+        Sahwit "I quailed in fright and found myself unable to go inside."
+        "Press":
+            Phoenix "Hold it!"
+
+            Phoenix "So, you didn't touch ANYTHING in the apartment?"
+
+            Sahwit "Um, yes. I mean no! Nothing."
+
+            Phoenix "Okay. What happened next?"
+
+            jump one6
+        "Present":
+            menu:
+                "What evidence are you presenting?"
+                "Attorney's Badge":
+                    jump wrongEvidence1
+                "Cindy's Autopsy Report":
+                    jump wrongEvidence1
+                "Statue":
+                    jump wrongEvidence1
+                "Passport":
+                    jump wrongEvidence1
+                "Blackout Record":
+                    jump wrongEvidence1
+                "Go back":
+                    jump one5
+        "Check Court Record":
+            menu:
+                "What evidence do you want to check?"
+                "Attorney's Badge":
+                    Phoenix "One of my possessions. No one would believe I was a defense attorney if I didn't carry this."
+                    jump one5
+                "Cindy's Autopsy Report":
+                    Phoenix "Received from Mia Fey. Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma."
+                    jump one5
+                "Statue":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. A statue in the shape of 'The Thinker'. It's rather heavy."
+                    jump one5
+                "Passport":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. The victim apparently arrived home from Paris on 7/30, the day before the murder."
+                    jump one5
+                "Blackout Record":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. Electricity to Ms. Stone's building was out from noon to 6 PM on the day of the crime."
+                    jump one5
+                "Go back":
+                    jump one5
+        "Next statement":
+            jump one6
+        "Previous statement":
+            jump one4
+    menu one6:
+        Sahwit "I thought to call the police immediately!"
+        "Press":
+            Phoenix "Hold it!"
+
+            Phoenix "You 'thought' to call the police? Does that mean you didn't actually call them!?"
+
+            Payne "Please, please... Listen to the rest of the testimony. You thought to call the police... What happened next?"
+
+            jump one7
+        "Present":
+            menu:
+                "What evidence are you presenting?"
+                "Attorney's Badge":
+                    jump wrongEvidence1
+                "Cindy's Autopsy Report":
+                    jump wrongEvidence1
+                "Statue":
+                    jump wrongEvidence1
+                "Passport":
+                    jump wrongEvidence1
+                "Blackout Record":
+                    jump wrongEvidence1
+                "Go back":
+                    jump one6
+        "Check Court Record":
+            menu:
+                "What evidence do you want to check?"
+                "Attorney's Badge":
+                    Phoenix "One of my possessions. No one would believe I was a defense attorney if I didn't carry this."
+                    jump one6
+                "Cindy's Autopsy Report":
+                    Phoenix "Received from Mia Fey. Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma."
+                    jump one6
+                "Statue":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. A statue in the shape of 'The Thinker'. It's rather heavy."
+                    jump one6
+                "Passport":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. The victim apparently arrived home from Paris on 7/30, the day before the murder."
+                    jump one6
+                "Blackout Record":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. Electricity to Ms. Stone's building was out from noon to 6 PM on the day of the crime."
+                    jump one6
+                "Go back":
+                    jump one6
+        "Next statement":
+            jump one7
+        "Previous statement":
+            jump one5
+    menu one7:
+        Sahwit "However, the phone in her apartment wasn't working."
+        "Press":
+            Phoenix "Hold it!"
+
+            Phoenix "The phone in her apartment wasn't working?"
+
+            Sahwit "Yes. I mean, no, no it wasn't. Right."
+
+            Phoenix "But you said you didn't go into the apartment... or did you!?"
+
+            Sahwit "Oh, oh, that? I can explain that! There was a cordless phone on a shelf in the entranceway. I reached inside and tried using that to call..."
+
+            Payne "And the phone wasn't working, correct? What happened next?"
+
+            jump one8
+        "Present":
+            menu:
+                "What evidence are you presenting?"
+                "Attorney's Badge":
+                    jump wrongEvidence1
+                "Cindy's Autopsy Report":
+                    jump wrongEvidence1
+                "Statue":
+                    jump wrongEvidence1
+                "Passport":
+                    jump wrongEvidence1
+                "Blackout Record":
+                    jump wrongEvidence1
+                "Go back":
+                    jump one7
+        "Check Court Record":
+            menu:
+                "What evidence do you want to check?"
+                "Attorney's Badge":
+                    Phoenix "One of my possessions. No one would believe I was a defense attorney if I didn't carry this."
+                    jump one7
+                "Cindy's Autopsy Report":
+                    Phoenix "Received from Mia Fey. Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma."
+                    jump one7
+                "Statue":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. A statue in the shape of 'The Thinker'. It's rather heavy."
+                    jump one7
+                "Passport":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. The victim apparently arrived home from Paris on 7/30, the day before the murder."
+                    jump one7
+                "Blackout Record":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. Electricity to Ms. Stone's building was out from noon to 6 PM on the day of the crime."
+                    jump one7
+                "Go back":
+                    jump one7
+        "Next statement":
+            jump one8
+        "Previous statement":
+            jump one6
+    menu one8:
+        Sahwit "I went to a nearby park and found a public phone."
+        "Press":
+            Phoenix "Hold it!"
+
+            Phoenix "Why use a public phone?"
+
+            Sahwit "Well, you see, I don't have a cell phone. And, being the middle of the afternoon, there was no answer at the nearby apartments."
+
+            Phoenix "Ah, right... what time did you call again?"
+
+            jump one9
+        "Present":
+            menu:
+                "What evidence are you presenting?"
+                "Attorney's Badge":
+                    jump wrongEvidence1
+                "Cindy's Autopsy Report":
+                    jump wrongEvidence1
+                "Statue":
+                    jump wrongEvidence1
+                "Passport":
+                    jump wrongEvidence1
+                "Blackout Record":
+                    jump wrongEvidence1
+                "Go back":
+                    jump one8
+        "Check Court Record":
+            menu:
+                "What evidence do you want to check?"
+                "Attorney's Badge":
+                    Phoenix "One of my possessions. No one would believe I was a defense attorney if I didn't carry this."
+                    jump one8
+                "Cindy's Autopsy Report":
+                    Phoenix "Received from Mia Fey. Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma."
+                    jump one8
+                "Statue":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. A statue in the shape of 'The Thinker'. It's rather heavy."
+                    jump one8
+                "Passport":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. The victim apparently arrived home from Paris on 7/30, the day before the murder."
+                    jump one8
+                "Blackout Record":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. Electricity to Ms. Stone's building was out from noon to 6 PM on the day of the crime."
+                    jump one8
+                "Go back":
+                    jump one8
+        "Next statement":
+            jump one9
+        "Previous statement":
+            jump one7
+    menu one9:
+        Sahwit "I remember the time exactly: It was 1:00 PM."
+        "Press":
+            Phoenix "Hold it!"
+
+            Phoenix "1:00 PM! Are you certain?"
+
+            Sahwit "Yes. Absolutely."
+
+            Phoenix "(Hmm... He seems really confident.)"
+
+            Mia "1:00 PM? Wright. Doesn't that seem strange to you? Present some evidence to contradict him!"
+
+            jump one10
+        "Present":
+            menu:
+                "What evidence are you presenting?"
+                "Attorney's Badge":
+                    jump wrongEvidence1
+                "Cindy's Autopsy Report":
+                    jump correct1
+                "Statue":
+                    jump wrongEvidence1
+                "Passport":
+                    jump wrongEvidence1
+                "Blackout Record":
+                    jump wrongEvidence1
+                "Go back":
+                    jump one9
+        "Check Court Record":
+            menu:
+                "What evidence do you want to check?"
+                "Attorney's Badge":
+                    Phoenix "One of my possessions. No one would believe I was a defense attorney if I didn't carry this."
+                    jump one9
+                "Cindy's Autopsy Report":
+                    Phoenix "Received from Mia Fey. Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma."
+                    jump one9
+                "Statue":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. A statue in the shape of 'The Thinker'. It's rather heavy."
+                    jump one9
+                "Passport":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. The victim apparently arrived home from Paris on 7/30, the day before the murder."
+                    jump one9
+                "Blackout Record":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. Electricity to Ms. Stone's building was out from noon to 6 PM on the day of the crime."
+                    jump one9
+                "Go back":
+                    jump one9
+        "Next statement":
+            jump one10
+        "Previous statement":
+            jump one8
+    menu one10:
+        Sahwit "The man who ran was, without a doubt, the defendant sitting right over there."
+        "Press":
+            Phoenix "Hold it!"
+
+            Phoenix "Are you absolutely, 100 percent positive?"
+
+            Sahwit "Yes, it was him. No mistake about it."
+
+            Payne "The witness says he's certain!"
+
+            Mia "That's all of it. There must be a contradiction in there somewhere. Examine the Court Record button if something strikes you as being suspicious. Then, find the evidence that contradicts his testimony, and present it to him!"
+
+            jump one1
+        "Present":
+            menu:
+                "What evidence are you presenting?"
+                "Attorney's Badge":
+                    jump wrongEvidence1
+                "Cindy's Autopsy Report":
+                    jump wrongEvidence1
+                "Statue":
+                    jump wrongEvidence1
+                "Passport":
+                    jump wrongEvidence1
+                "Blackout Record":
+                    jump wrongEvidence1
+                "Go back":
+                    jump one10
+        "Check Court Record":
+            menu:
+                "What evidence do you want to check?"
+                "Attorney's Badge":
+                    Phoenix "One of my possessions. No one would believe I was a defense attorney if I didn't carry this."
+                    jump one10
+                "Cindy's Autopsy Report":
+                    Phoenix "Received from Mia Fey. Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma."
+                    jump one10
+                "Statue":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. A statue in the shape of 'The Thinker'. It's rather heavy."
+                    jump one10
+                "Passport":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. The victim apparently arrived home from Paris on 7/30, the day before the murder."
+                    jump one10
+                "Blackout Record":
+                    Phoenix "Submitted as evidence by Prosecutor Payne. Electricity to Ms. Stone's building was out from noon to 6 PM on the day of the crime."
+                    jump one10
+                "Go back":
+                    jump one10
+        "Previous statement":
+            jump one9
+
+    label wrongEvidence1:
+        Phoenix "Objection!"
+
+        Phoenix "Your Honor! That statement contradicts this evidence!"
+
+        Judge "...? It does? I don't see anything contradictory."
+
+        Phoenix "Huh? Really?"
+
+        Judge "Objection overruled. Try to think before you make accusations, Mr. Wright!"
+
+        Phoenix "(Whoops! That didn't go so well.)"
+
+        jump one1
+
+    label correct1:
+        Phoenix "Objection!!!"
+
+    Phoenix "You found the body at 1:00 PM. You're sure?"
+
+    Sahwit "Yes. It was 1:00 PM, for certain."
+
+    Phoenix "Frankly, I find that hard to believe! Your statement directly contradicts the autopsy report. The autopsy notes the time of death at sometime after 4PM. There was nobody to... er... no 'body' to find at 1:00 PM! How do you explain this three-hour gap?"
+
+    Sahwit "!!! Oh, that! Oh, er..."
+
+    Payne "Objection!"
+
+    Payne "This is trivial! The witness merely forgot the time!"
+
+    Judge "After his testimony, I find that hard to believe. Mr. Sahwit... Why were you so certain that you found the body at 1:00 PM?"
+
+    Sahwit "I.. er... well, I... Gee, that's a really good question!"
+
+    Mia "Great job, Wright! Way to put him on the spot! That's all you have to do: point out contradictions! Lies always beget more lies! See through one, and their whole story falls apart!"
+
+    Sahwit "Wait! I remember now!"
+
+    Judge "Would you care to give your testimony again?"    
+
+    # This ends the game.
+
+    return
