@@ -10,6 +10,10 @@ define Judge = Character("Judge")
 define Payne = Character("Payne")
 define Sahwit = Character("Sahwit")
 
+image takethat = im.Scale("TakeThat.png",800,600)
+image objection = im.Scale("OBJECTion.png",800,600)
+image holdit = im.Scale("HoldIt.png",800,600)
+
 
 # The game starts here.
 
@@ -20,6 +24,8 @@ label start:
     # images directory to show it.
 
     scene lobby
+
+    play music "lobbymusic.mp3"
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -78,6 +84,8 @@ label start:
 
     scene courtroom
 
+    play music "trial.mp3"
+
     "August 3, 10:00 AM - District Court - Courtroom No. 2"
 
     Judge "The court is now in session for the trial of Mr. Larry Butz."
@@ -102,6 +110,7 @@ label start:
 
     label choice1:
         menu:
+            Judge "Please state the name of the defendant in this case."
             "Phoenix Wright":
                 jump wright
             "Larry Butz":
@@ -118,7 +127,7 @@ label start:
 
             Mia "This is no laughing matter! You did pass the bar, didn't you?"
 
-            Judge "Sorry, I couldn't hear your answer. I'll ask once more: Please state the name of the defendant in this case."
+            Judge "Sorry, I couldn't hear your answer. I'll ask once more:"
             jump choice1
 
         label fey:
@@ -132,7 +141,7 @@ label start:
 
             Phoenix "(I've put my foot in it this time! I've got to relax!)"
 
-            Judge "Sorry, I couldn't hear your answer. I'll ask once more: Please state the name of the defendant in this case."
+            Judge "Sorry, I couldn't hear your answer. I'll ask once more:"
 
             jump choice1
 
@@ -153,6 +162,7 @@ label start:
 
     label choice2:
         menu:
+            Judge "Mr. Wright. Who is the victim in this case?"
             "Mia Fey":
                 jump fey2
             "Cinder Block":
@@ -167,14 +177,14 @@ label start:
 
             Phoenix "Oh! Right! Sorry! I, er, it was the first name that popped into my head, and--"
 
-            Judge "Let me ask that one again: Who is the victim in this case?"
+            Judge "Let me ask that one again:"
 
             jump choice2
 
         label cinder:
             Phoenix "Oh, um, wasn't it Ms. Block? Ms. Cinder Block?"
 
-            Judge "The person in question was a victim of murder, not ill-conceived naming, Mr. Wright. I ask you again: Who is the victim in this case?"
+            Judge "The person in question was a victim of murder, not ill-conceived naming, Mr. Wright. I ask you again:"
 
             jump choice2
 
@@ -187,6 +197,7 @@ label start:
 
     label choice3:
         menu:
+            Judge "She died because she was...?"
             "Poisoned":
                 jump poison
             "Hit with a blunt object":
@@ -207,7 +218,7 @@ label start:
 
             Phoenix "(Geez. Give a guy a break!)"
 
-            Judge "Let me ask again. She died because she was...?"
+            Judge "Let me ask again."
 
             jump choice3
 
@@ -216,7 +227,7 @@ label start:
 
             Mia "Please tell me that was you talking to yourself."
 
-            Judge "If you wish to hang yourself, Mr. Wright, you're welcome to, but not inside my courtroom. I suppose there's nothing to do but give you another try: She died because...?"
+            Judge "If you wish to hang yourself, Mr. Wright, you're welcome to, but not inside my courtroom. I suppose there's nothing to do but give you another try:"
 
             jump choice3
 
@@ -300,6 +311,7 @@ label start:
     Phoenix "(Yeah... Larry has a way of running his mouth in all the wrong directions. Should I...?)"
 
     menu:
+        Phoenix "(Yeah... Larry has a way of running his mouth in all the wrong directions. Should I...?)"
         "Wait and see what happens":
             jump wait
         "Stop him from answering":
@@ -342,6 +354,7 @@ label start:
     Phoenix "(Uh oh. He went. What do I do?)"
 
     menu:
+        Phoenix "(Uh oh. He went. What do I do?)"
         "Have him answer honestly":
             jump honest
         "Stop him from answering":
@@ -399,8 +412,12 @@ label start:
 
     Judge "Mr. Sahwit, you may proceed with your testimony. Please tell the court what you saw on the day of the murder."
 
+    stop music
+
     "Witness Testimony
     -- Witness's Account --"
+
+    play music "logic.mp3"
 
     Sahwit "I was going door-to-door, selling subscriptions when I saw a man fleeing an apartment."
 
@@ -468,13 +485,23 @@ label start:
 
     default penalties = 0
 
+    stop music
+
     "Cross Examination
     -- Witness's Account --"
+
+    play music "questioning.mp3"
 
     menu one1:
         Sahwit "I was going door-to-door, selling subscriptions when I saw a man fleeing an apartment."
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "Isn't a man leaving an apartment a common sight? I find it odd you would take notice of him..."
 
@@ -525,7 +552,13 @@ label start:
     menu one2:
         Sahwit "I thought he must be in a hurry because he left the door half-open behind him."
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "Half-open... you say?"
 
@@ -576,7 +609,13 @@ label start:
     menu one3:
         Sahwit "Thinking it strange, I looked inside the apartment."
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "What gave you the idea to do that?"
 
@@ -631,7 +670,13 @@ label start:
     menu one4:
         Sahwit "Then I saw her lying there... A woman... not moving... dead!"
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "Are you sure she was dead?"
 
@@ -682,7 +727,13 @@ label start:
     menu one5:
         Sahwit "I quailed in fright and found myself unable to go inside."
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "So, you didn't touch ANYTHING in the apartment?"
 
@@ -733,7 +784,13 @@ label start:
     menu one6:
         Sahwit "I thought to call the police immediately!"
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "You 'thought' to call the police? Does that mean you didn't actually call them!?"
 
@@ -782,7 +839,13 @@ label start:
     menu one7:
         Sahwit "However, the phone in her apartment wasn't working."
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "The phone in her apartment wasn't working?"
 
@@ -837,7 +900,13 @@ label start:
     menu one8:
         Sahwit "I went to a nearby park and found a public phone."
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "Why use a public phone?"
 
@@ -888,7 +957,13 @@ label start:
     menu one9:
         Sahwit "I remember the time exactly: It was 1:00 PM."
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "1:00 PM! Are you certain?"
 
@@ -941,7 +1016,13 @@ label start:
     menu one10:
         Sahwit "The man who ran was, without a doubt, the defendant sitting right over there."
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "Are you absolutely, 100 percent positive?"
 
@@ -991,7 +1072,13 @@ label start:
             jump one9
 
     label wrongEvidence1:
+        show objection at truecenter
+
+        play sound "Phoenix - objection.mp3"
+
         Phoenix "Objection!"
+
+        hide objection
 
         Phoenix "Your Honor! That statement contradicts this evidence!"
 
@@ -1008,6 +1095,7 @@ label start:
         "PENALTIES: [penalties]"
 
         if penalties == 5:
+            stop music
             Judge "That's enough! This court see no reason to further prolong the trial. The defense has failed to give the court sufficient reason to doubt the prosecution's claim. This court find the defendant, Mr. Larry Butz..."
 
             Judge "GUILTY"
@@ -1019,11 +1107,21 @@ label start:
         jump one1
 
     label correct1:
+        stop music
+
+        show objection at truecenter
+
+        play sound "Phoenix - objection.mp3"
+
         Phoenix "Objection!!!"
+
+        hide objection
 
     Phoenix "You found the body at 1:00 PM. You're sure?"
 
     Sahwit "Yes. It was 1:00 PM, for certain."
+
+    play music "objection.mp3"
 
     Phoenix "Frankly, I find that hard to believe! Your statement directly contradicts the autopsy report. The autopsy notes the time of death at sometime after 4PM. There was nobody to... er... no 'body' to find at 1:00 PM! How do you explain this three-hour gap?"
 
@@ -1043,8 +1141,12 @@ label start:
 
     Judge "Would you care to give your testimony again?"
 
+    stop music
+
     "Witness Testimony
     -- The Time of Discovery --"
+
+    play music "logic.mp3"
 
     Sahwit "You see, when I found the body, I heard the time."
 
@@ -1064,13 +1166,23 @@ label start:
 
     Phoenix "I've got this one."
 
+    stop music
+
     "Cross Examination
     -- The Time of Discovery --"
+
+    play music "questioning.mp3"
 
     menu two1:
         Sahwit "You see, when I found the body, I heard the time."
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "You said 'heard'... Not 'saw'?"
 
@@ -1125,7 +1237,13 @@ label start:
     menu two2:
         Sahwit "There was a voice saying the time... It was probably coming from the television."
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "Are you sure it was a television and not... a radio?"
 
@@ -1180,7 +1298,13 @@ label start:
     menu two3:
         Sahwit "Oh, but it was three hours off, wasn't it?"
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "How do you explain the gap!"
 
@@ -1229,7 +1353,13 @@ label start:
     menu two4:
         Sahwit "I guess the victim must have been watching a video of a taped program!"
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "A.. video?"
 
@@ -1284,7 +1414,13 @@ label start:
     menu two5:
         Sahwit "That's why I thought it was 1:00 PM!"
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "Are you sure the voice you heard said it was 1:00 PM?"
 
@@ -1339,7 +1475,13 @@ label start:
     menu two6:
         Sahwit "Terribly sorry about the misunderstanding..."
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "Well, you just watch it! (Hmm... Not much point pressing him on that one, was there?)"
 
@@ -1385,7 +1527,13 @@ label start:
             jump two5
 
     label wrongEvidence2:
+        show objection at truecenter
+
+        play sound "Phoenix - objection.mp3"
+
         Phoenix "Objection!"
+
+        hide objection
 
         Phoenix "Your Honor! What do you think about the witness's statement?"
 
@@ -1402,6 +1550,7 @@ label start:
         "PENALTIES: [penalties]"
 
         if penalties == 5:
+            stop music
             Judge "That's enough! This court see no reason to further prolong the trial. The defense has failed to give the court sufficient reason to doubt the prosecution's claim. This court find the defendant, Mr. Larry Butz..."
 
             Judge "GUILTY"
@@ -1413,7 +1562,17 @@ label start:
         jump two1
 
     label correct2:
+        stop music
+
+        show objection at truecenter
+
+        play sound "Phoenix - objection.mp3"
+
         Phoenix "Objection!!!"
+
+        hide objection
+
+    play music "objection.mp3"
 
     Phoenix "Hold it right there! The prosecution has said there was a blackout at the time of the discovery! And this record proves it!"
 
@@ -1433,8 +1592,12 @@ label start:
 
     Judge "Very well, Mr. Sahwit. Let's hear your testimony once more please."
 
+    stop music
+
     "Witness Testimony
     -- Hearing the Time --"
+
+    play music "logic.mp3"
 
     Sahwit "Actually, I didn't 'hear' the time... I 'saw' it!"
 
@@ -1448,10 +1611,23 @@ label start:
 
     Phoenix "Gladly."
 
+    stop music
+
+    "Cross Examination
+    -- Hearing the Time --"
+
+    play music "questioning.mp3"
+
     menu three1:
         Sahwit "Actually, I didn't 'hear' the time... I 'saw' it!"
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "That strikes me as a very suspicious mistake."
 
@@ -1500,7 +1676,13 @@ label start:
     menu three2:
         Sahwit "There was a table clock in the apartment, wasn't there!"
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "A 'table clock'? Was there a clock at the scene?"
 
@@ -1542,14 +1724,20 @@ label start:
                     jump three2
                 "Go back":
                     jump three2
-        "Previous statement":
-            jump three1
         "Next statement":
             jump three3
+        "Previous statement":
+            jump three1
     menu three3:
         Sahwit "Yeah, the murder weapon! The killer used it to hit the victim!"
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "The... murder weapon?"
 
@@ -1593,14 +1781,20 @@ label start:
                     jump three3
                 "Go back":
                     jump three3
-        "Previous statement":
-            jump three2
         "Next statement":
             jump three4
+        "Previous statement":
+            jump three2
     menu three4:
         Sahwit "That must have been what I saw."
         "Press":
+            show holdit at truecenter
+
+            play sound "Phoenix - Hold it.mp3"
+
             Phoenix "Hold it!"
+
+            hide holdit
 
             Phoenix "Why didn't you tell us that in the first place?"
 
@@ -1650,7 +1844,13 @@ label start:
             jump three3
 
     label wrongEvidence3:
+        show objection at truecenter
+
+        play sound "Phoenix - objection.mp3"
+
         Phoenix "Objection!"
+
+        hide objection
 
         Phoenix "This evidence clearly reveals the contradiction in that statement, Your Honor!"
 
@@ -1667,6 +1867,7 @@ label start:
         "PENALTIES: [penalties]"
 
         if penalties == 5:
+            stop music
             Judge "That's enough! This court see no reason to further prolong the trial. The defense has failed to give the court sufficient reason to doubt the prosecution's claim. This court find the defendant, Mr. Larry Butz..."
 
             Judge "GUILTY"
@@ -1678,7 +1879,17 @@ label start:
         jump three1
 
     label correct3:
+        stop music
+
+        show objection at truecenter
+
+        play sound "Phoenix - objection.mp3"
+
         Phoenix "Objection!!!"
+
+        hide objection
+
+    play music "cornered.mp3"
 
     Phoenix "Wait just a moment! The murder weapon wasn't a clock. It was this statue! Now how is this supposed to be a clock?"
 
@@ -1697,6 +1908,7 @@ label start:
     Judge "I see. So the murder weapon was a table clock after all. Well, Mr. Wright? It appears that the witness's testimony was correct. This is a clock. Do you have any problems with his testimony now?"
 
     menu:
+        Judge "I see. So the murder weapon was a table clock after all. Well, Mr. Wright? It appears that the witness's testimony was correct. This is a clock. Do you have any problems with his testimony now?"
         "No":
             Phoenix "I guess not. There was a clock on the scene, so, no problem."
 
@@ -1742,6 +1954,7 @@ label start:
             "PENALTIES: [penalties]"
 
             if penalties == 5:
+                stop music
                 Judge "That's enough! This court see no reason to further prolong the trial. The defense has failed to give the court sufficient reason to doubt the prosecution's claim. This court find the defendant, Mr. Larry Butz..."
 
                 Judge "GUILTY"
@@ -1808,6 +2021,7 @@ label start:
             "PENALTIES: [penalties]"
 
             if penalties == 5:
+                stop music
                 Judge "That's enough! This court see no reason to further prolong the trial. The defense has failed to give the court sufficient reason to doubt the prosecution's claim. This court find the defendant, Mr. Larry Butz..."
 
                 Judge "GUILTY"
@@ -1837,6 +2051,7 @@ label start:
             "PENALTIES: [penalties]"
 
             if penalties == 5:
+                stop music
                 Judge "That's enough! This court see no reason to further prolong the trial. The defense has failed to give the court sufficient reason to doubt the prosecution's claim. This court find the defendant, Mr. Larry Butz..."
 
                 Judge "GUILTY"
@@ -1884,9 +2099,13 @@ label start:
 
     Sahwit "I come all the way down here to testify, and look what happens! You treat me like a criminal! A criminal! You lawyers are all slime!"
 
+    stop music fadeout 1.0
+
     Phoenix "(Grr! I almost had him! Sorry, Larry... I failed you. There's nothing I can do about it now...)"
 
     Mia "Not so fast, Mr. Sahwit!"
+
+    play music "cornered.mp3"
 
     Phoenix "Mia! I mean, Chief!"
 
@@ -1971,7 +2190,13 @@ label start:
                     jump choice7
 
     label wrongEvidence4:
+        show takethat at truecenter
+
+        play sound "Phoenix - takethat.mp3"
+
         Phoenix "Take that!"
+
+        hide takethat
 
         Judge "Um, excuse me. This proves your claim... how? I can't see what that evidence has to do with the clock."
 
@@ -1982,6 +2207,7 @@ label start:
         "PENALTIES: [penalties]"
 
         if penalties == 5:
+            stop music
             Judge "That's enough! This court see no reason to further prolong the trial. The defense has failed to give the court sufficient reason to doubt the prosecution's claim. This court find the defendant, Mr. Larry Butz..."
 
             Judge "GUILTY"
@@ -1997,7 +2223,13 @@ label start:
         jump choice7
 
     label correct4:
+        show takethat at truecenter
+
+        play sound "Phoenix - takethat.mp3"
+
         Phoenix "Take that!!!"
+
+        hide takethat
 
     Phoenix "The victim had just returned home from abroad the day before the murder. As we all know, the time difference between here and Paris is nine hours! When it's 4:00 PM here, it's 1:00 AM the next day there. "
 
@@ -2005,7 +2237,11 @@ label start:
 
     Sahwit "Ngh! ...! *feints*"
 
+    stop music fadeout 1.0
+
     Judge "O-order! Order, I say!"
+
+    play music "trial.mp3"
 
     Judge "Well... This case has certainly turned out differently than we all expected. Mr. Payne... your witness?"
 
@@ -2032,6 +2268,8 @@ label start:
     scene lobby
 
     "August 3, 2:32 PM - District Court - Defendant Lobby No.2"
+
+    play music "victory.mp3"
 
     Phoenix "(Whew... I still can't believe we won!)"
 
@@ -2105,7 +2343,13 @@ label start:
             jump wrongEvidence5
 
     label wrongEvidence5:
+        show takethat at truecenter
+
+        play sound "Phoenix - takethat.mp3"
+
         Phoenix "Take that!"
+
+        hide takethat
 
         Phoenix "Here you go, Larry. Proof."
 
@@ -2116,7 +2360,13 @@ label start:
         jump continue7
 
     label correct5:
+        show takethat at truecenter
+
+        play sound "Phoenix - takethat.mp3"
+
         Phoenix "Take that!!!"
+
+        hide takethat
 
         Phoenix "Check this out, Larry. Proof Positive you weren't just some chump to her."
 
