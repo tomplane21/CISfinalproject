@@ -55,3 +55,13 @@ The entire trial plus character portraits and audio.
 ## In a paragraph or more, outline your next steps. What new skills will you need to acquire? What topics will you need to research? If working with one of two classmates, who will do what?
 
 My immediate next step is to get used to and research Ren'Py and the features that it has. I will also need to learn how to impliment typical Python code (if/then statements, loops, etc) with Ren'Py's engine. 
+
+
+## YouTube video URL
+
+https://www.youtube.com/watch?v=RG7cdaHdU1Y
+
+## Other thoughts on the final project
+
+The biggest challenge when working on this project was the logic needed to sort every dialogue jump during the cross-examinations. There are no Ren'Py novels out there that attempt to fully recreate Ace Attorney, so when trying to figure out exactly what menus and dialogue the player needed to be seeing during the cross-examinations, I had to do it on my own. However, that was also one of the most enjoyable parts of the process, and when I eventually got the cross-examinations to work exactly as I wanted them to, it was a great feeling of satisfaction. Having to learn a slightly modified version of Python was also challenging, but Ren'Py is very user friendly and I felt confident coding in it fairly early on. Ideally, I would have been able to incorporate every character's image in the final product, but I am satisfied with incorporating the action images, music, and sound effects. Overall, I thouroughly enjoyed creating this, and I learned how satisfying learning and figuring out new things can be.
+
